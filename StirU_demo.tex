@@ -1,0 +1,131 @@
+%===========================================================================
+% Preamble 
+%===========================================================================
+
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{geometry}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{color, colortbl}
+\usepackage{dcolumn}
+\newcolumntype{d}{D{.}{.}{2.5}}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage[flushleft]{threeparttable}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+% Position figures 
+\newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
+
+% Roman numerals
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%\setbeamercovered{transparent}
+
+% Define my itemize 
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{itemize}                  }
+
+%===========================================================================
+% Define title page 
+%===========================================================================
+
+\author{A, B \& C}
+\title{\fontsize{13}{15}{\selectfont\textbf{An illustration of the University of Stirling Beamer Template}}}
+\institute{University of Stirling}
+\date{\today}
+
+%===========================================================================
+\begin{document}
+%===========================================================================
+%===========================================================================
+% Title page 
+%===========================================================================
+\begin{frame}[standout,plain]
+
+\titlepage
+\end{frame}
+%=============================================================================
+% Content
+%=============================================================================
+
+\section{Introduction}
+\begin{frame}
+\frametitle{A Frame}
+\framesubtitle{Bullet points}
+\begin{itemize}
+\item First thing
+	\begin{itemize}
+	\item small point
+	\item fine print
+	\end{itemize}
+\item Second thing
+	\begin{enumerate}
+	\item point 1
+	\end{enumerate}
+\item Third thing
+	\begin{description}
+	\item[Research] the scientific pursuit for knowledge
+	\end{description}
+\end{itemize}
+\end{frame}
+
+\subsection{Text}
+\begin{frame}
+\frametitle{Another Frame}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\end{frame}
+
+\subsection{Blocks}
+\begin{frame}
+\frametitle{Blocks}
+\begin{definition}[Greetings]
+Hello World
+\end{definition}
+
+\begin{theorem}[Fermat's Last Theorem]
+$a^n + b^n = c^n, n \leq 2$
+\end{theorem}
+
+\begin{alertblock}{Uh-oh.}
+By the pricking of my thumbs.
+\end{alertblock}
+
+\begin{exampleblock}{Uh-oh.}
+Something evil this way comes.
+\end{exampleblock}
+
+\end{frame}
+
+%===========================================================================
+% Thank you
+%===========================================================================
+{
+\setbeamertemplate{logo}{}
+\begin{frame}[standout,plain]
+  Thank you!
+	\begin{tikzpicture}[overlay,remember picture]
+		\node (logo) [at=(current page.north east),anchor=north east, xshift=0cm, yshift=0.2cm]
+    {\includegraphics[width=0.5\textwidth]{Figures/UoS-50-YEARS-LOGO-WHITE}};
+\end{tikzpicture}
+\end{frame}
+}
+%===========================================================================
+\end{document}
+%===========================================================================
+
